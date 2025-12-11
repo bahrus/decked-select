@@ -1,0 +1,30 @@
+{
+  "name": "decked-select",
+  "version": "0.0.0",
+  "description": "",
+  "homepage": "https://github.com/bahrus/xtal-select#readme",
+  "bugs": {
+    "url": "https://github.com/bahrus/xtal-select/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bahrus/xtal-select.git"
+  },
+  "license": "MIT",
+  "author": "Bruce B. Anderson <anderson.bruce.b@gmail.com>",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "serve": "node ./node_modules/spa-ssi/serve.js",
+    "safari": "npx playwright wk http://localhost:8000",
+    "update": "ncu -u && npm install"
+  },
+  "dependencies": {
+    "be-decked-with": "0.0.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.57.0",
+    "spa-ssi": "0.0.25"
+  }
+}
