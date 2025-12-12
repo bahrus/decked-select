@@ -20,7 +20,7 @@ It makes the select element [customizable](https://developer.mozilla.org/en-US/d
 
 <select id=select
     data-label=Country
-    😶‍🌫️-src="decked-select/root.html">
+    😶‍🌫️-src="decked-select/material.html">
     <button>
         <selectedcontent></selectedcontent>
     </button>
