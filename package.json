@@ -25,6 +25,7 @@
   },
   "devDependencies": {
     "@playwright/test": "1.57.0",
+    "be-valued": "0.0.7",
     "spa-ssi": "0.0.25"
   }
 }
