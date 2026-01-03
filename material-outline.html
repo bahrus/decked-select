@@ -25,6 +25,7 @@
             --option-color: #ffffff;
             --container-focus-border-color: rgb(144, 202, 249);
             --container-no-focus-border-color: rgba(255, 255, 255, 0.23);
+            --option-hover-background-color: rgb(101, 105, 108);/*, 0.16);*/
         }
     }
 
@@ -120,8 +121,10 @@
             option:nth-of-type(odd) {
                 background: var(--select-background-odd);
             }
-            option:hover,
-              option:focus {
+            option:enabled:hover {
+                background-color: var(--option-hover-background-color);
+            }
+            option:focus {
                 background: var(--select-background-hover-focus);
             }
             option:checked{
