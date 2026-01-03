@@ -164,7 +164,7 @@
             }
         }
     }
-    .decked-select-wrapper:has(select:focus){
+    .decked-select-wrapper:has(*:focus){
         border-color: var(--container-focus-border-color);
         & legend {
             opacity: 1;
@@ -179,7 +179,7 @@
         }
     }
     /* wrapper where select doesn't have focus */
-    .decked-select-wrapper:not(:has(select:focus)){
+    .decked-select-wrapper:not(:has(*:focus)){
         border-color: var(--container-no-focus-border-color);
     }
     .decked-select-wrapper:hover {
