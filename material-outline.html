@@ -14,9 +14,9 @@
         /* Color Variables */
         --hover-highlight-color: #00bfff; /* bright blue */
         --select-border-color: #dddddd;
-        --select-background: #eeeeee;
+        --select-background-color: #ffffff;
         --select-background-hover: #dddddd;
-        --select-background-odd: #ffffff;
+        --select-background-odd: var(--select-background-color);
         /* --select-background-hover-focus: plum; */
         --select-background-hover-focus: rgba(144, 202, 249, 0.16);
         --select-icon-color: #999999;
@@ -69,7 +69,7 @@
                 gap: var(--option-gap);
 
                 border: var(--select-border-width) solid var(--select-border-color);
-                background: var(--select-background);
+                background-color: var(--select-background-color);
                 padding: var(--select-padding);
                 transition: var(--select-transition);
                 .icon {
