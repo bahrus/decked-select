@@ -23,7 +23,8 @@
             --select-background-hover-focus: rgba(100, 181, 246, 0.16);
             --select-icon-color: #bbbbbb;
             --option-color: #ffffff;
-            --container-border-color: rgb(144, 202, 249);
+            --container-focus-border-color: rgb(144, 202, 249);
+            --container-no-focus-border-color: rgba(255, 255, 255, 0.23);
         }
     }
 
@@ -164,7 +165,7 @@
         }
     }
     .decked-select-wrapper:has(select:focus){
-        border-color: var(--container-border-color);
+        border-color: var(--container-focus-border-color);
         & legend {
             opacity: 1;
             transform: translateY(0);
@@ -176,6 +177,10 @@
             transform: translateY(calc(-1 * var(--translate-length))); /* move up and fade out */
             max-width: 0px;
         }
+    }
+    /* wrapper where select doesn't have focus */
+    .decked-select-wrapper:not(:has(select:focus)){
+        border-color: var(--container-no-focus-border-color);
     }
     .decked-select-wrapper:hover {
         border-color:  var(--hover-highlight-color);
