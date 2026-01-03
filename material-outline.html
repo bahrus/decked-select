@@ -23,6 +23,7 @@
             --select-background-hover-focus: rgba(100, 181, 246, 0.16);
             --select-icon-color: #bbbbbb;
             --option-color: #ffffff;
+            --container-border-color: rgb(144, 202, 249);
         }
     }
 
@@ -76,6 +77,7 @@
         --icon-order: 1;
         --select-pi-tansition: 0.4s rotate;
         --select-opi-rotate: 180deg;
+        
         width: var(--outer-width);
         box-sizing: var(--box-sizing);
         font-family: var(--font-family);
@@ -162,6 +164,7 @@
         }
     }
     .decked-select-wrapper:has(select:focus){
+        border-color: var(--container-border-color);
         & legend {
             opacity: 1;
             transform: translateY(0);
