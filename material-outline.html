@@ -21,7 +21,7 @@
             /* alternate row color */
             --select-background-odd: var(--select-background-color);
             /* --select-background-hover-focus: plum; */
-            --select-background-hover-focus: rgba(100, 181, 246, 0.16);
+            --select-background-hover-focus: var(--option-hover-background-color); /*rgba(100, 181, 246, 0.16);*/
             --select-icon-color: #bbbbbb;
             --option-color: #ffffff;
             --container-focus-border-color: rgb(144, 202, 249);
@@ -41,7 +41,7 @@
             /* alternate row color */
             --select-background-odd: var(--select-background-color);
             /* --select-background-hover-focus: plum; */
-            --select-background-hover-focus: rgba(144, 202, 249, 0.16);
+             --select-background-hover-focus: var(--hover-highlight-color) ;/* rgba(144, 202, 249, 0.16); */
             --select-icon-color: #999999;
             --option-color: #000000;
         }
@@ -92,7 +92,7 @@
             min-width: 0; /* allows flex item to shrink below content size */
             padding: var(--select-padding);
             border: var(--select-border-width) solid var(--select-border-color); 
-            background: var(--select-background);
+            /* background: var(--select-background); */
             transition: border-color var(--select-transition);
             option {
                 display: flex;
