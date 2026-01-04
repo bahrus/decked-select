@@ -168,19 +168,15 @@
             }
         }
     }
-    .decked-select-wrapper:has(*:focus){
+    .decked-select-wrapper:has(option:not([value=""]):checked){
         border-color: var(--container-focus-border-color);
-        & legend {
+        legend {
             opacity: 1;
             transform: translateY(0);
             width: auto;
             padding-inline: var(--legend-padding);
         }
-        & label>span {
-            opacity: 0;
-            transform: translateY(calc(-1 * var(--translate-length))); /* move up and fade out */
-            max-width: 0px;
-        }
+
     }
     /* wrapper where select doesn't have focus */
     .decked-select-wrapper:not(:has(*:focus)){
