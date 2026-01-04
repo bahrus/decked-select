@@ -1,0 +1,213 @@
+<fieldset part=decked-select-fieldset class=decked-select-wrapper part=decked-select-wrapper>
+    <legend part=decked-select-legend aria-label={{dataset.label}}>{{dataset.label}}</legend>
+    <slot>
+        <select></select>
+    </slot>
+    
+</fieldset>
+<style>
+
+    /* Dark mode styles */
+    @media (prefers-color-scheme: dark) {
+        .decked-select-wrapper {
+            /* Color Variables */
+            --option-hover-background-color: rgb(101, 105, 108);/*, 0.16);*/
+            --hover-highlight-color: var(--option-hover-background-color); /*#3399ff;  lighter blue for dark mode */
+            --select-border-color: #444444;
+            --select-background-color: #1e1e1e;
+            --select-background-hover: #333333;
+            /* alternate row color */
+            --select-background-odd: var(--select-background-color);
+            /* --select-background-hover-focus: plum; */
+            --select-background-hover-focus: var(--option-hover-background-color); /*rgba(100, 181, 246, 0.16);*/
+            --select-icon-color: #bbbbbb;
+            --option-color: #ffffff;
+            --container-focus-border-color: rgb(144, 202, 249);
+            --container-no-focus-border-color: rgba(255, 255, 255, 0.23);
+            
+        }
+    }
+
+        /* Light mode styles and common styles */
+    @media (prefers-color-scheme: light) {
+        .decked-select-wrapper {
+            /* Color Variables */
+            --hover-highlight-color: #00bfff; /* bright blue */
+            --select-border-color: #dddddd;
+            --select-background-color: #ffffff;
+            --select-background-hover: #dddddd;
+            /* alternate row color */
+            --select-background-odd: var(--select-background-color);
+            /* --select-background-hover-focus: plum; */
+             --select-background-hover-focus: var(--hover-highlight-color) ;/* rgba(144, 202, 249, 0.16); */
+            --select-icon-color: #999999;
+            --option-color: #000000;
+        }
+    }
+
+    .decked-select-wrapper {
+        display: inline-block;
+        
+        
+        /* Sizing Variables */
+        --outer-width: 400px;
+        --select-padding: 10px;
+        --gap-after-label: 3px;
+        --legend-padding: 2px;
+        --option-gap: 20px;
+        --option-icon-font-size: 1.6rem;
+        --option-border-radius: 8px;
+        --select-border-width: 2px;
+        --picker-border-radius: 8px;
+        --max-width-label: 200px;
+        
+        /* Transition Variables */
+        --transition-interval: 0.5s;
+        --select-transition: 0.4s;
+        --picker-transition: 0.4s;
+        --translate-length: 20px;
+        --picker-anchor-offset: 1px;
+        --picker-anchor-left: 10%;
+        
+        /* Typography Variables */
+        --box-sizing: border-box;
+        --font-family: "Roboto", "Helvetica", "Arial", "sans-serif";
+        
+        /* Layout Variables */
+        --select-flex: 1;
+        --icon-order: 1;
+        --select-pi-tansition: 0.4s rotate;
+        --select-opi-rotate: 180deg;
+        
+        width: var(--outer-width);
+        box-sizing: var(--box-sizing);
+        font-family: var(--font-family);
+        select, ::picker(select){
+            appearance: base-select;
+        }
+        select {
+            flex: var(--select-flex);
+            min-width: 0; /* allows flex item to shrink below content size */
+            padding: var(--select-padding);
+            border: var(--select-border-width) solid var(--select-border-color); 
+            /* background: var(--select-background); */
+            transition: border-color var(--select-transition);
+            option {
+                display: flex;
+                justify-content: flex-start;
+                gap: var(--option-gap);
+                color: var(--option-color);
+                border: var(--select-border-width) solid var(--select-border-color);
+                background-color: var(--select-background-color);
+                padding: var(--select-padding);
+                transition: var(--select-transition);
+                .icon {
+                    font-size: var(--option-icon-font-size);
+                    text-box: trim-both cap alphabetic;
+                }
+            }
+            option:first-of-type {
+                border-radius: var(--option-border-radius) var(--option-border-radius) 0 0;
+            }
+
+            option:last-of-type {
+                border-radius: 0 0 var(--option-border-radius) var(--option-border-radius);
+            }
+
+            option:not(option:last-of-type) {
+                border-bottom: none;
+            }
+            option:nth-of-type(odd) {
+                background: var(--select-background-odd);
+            }
+            option:enabled:hover {
+                background-color: var(--option-hover-background-color);
+            }
+            option:focus {
+                background: var(--select-background-hover-focus);
+            }
+            option:checked{
+                font-weight: bold;
+            }
+            /* option::checkmark {
+                order: var(--icon-order);
+                margin-left: auto;
+                content: "☑️";
+            } */
+            selectedcontent {
+                .icon{
+                    display: none;
+                }
+            }
+        }
+        select:hover, select:focus {
+            background: var(--select-background-hover);
+            
+        }
+        ::picker(select){
+            border: none;
+            border-radius: var(--picker-border-radius);
+            opacity: 0;
+            transition: all var(--picker-transition) allow-discrete;
+            top: calc(anchor(bottom) + var(--picker-anchor-offset));
+            left: anchor(var(--picker-anchor-left));
+        }
+        ::picker(select):popover-open {
+            opacity: 1;
+        }
+
+        label {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            
+            & span {
+                margin-right: var(--gap-after-label); 
+            }
+        }
+    }
+    .decked-select-wrapper:has(*:focus){
+        border-color: var(--container-focus-border-color);
+        & legend {
+            opacity: 1;
+            transform: translateY(0);
+            width: auto;
+            padding-inline: var(--legend-padding);
+        }
+        & label>span {
+            opacity: 0;
+            transform: translateY(calc(-1 * var(--translate-length))); /* move up and fade out */
+            max-width: 0px;
+        }
+    }
+    /* wrapper where select doesn't have focus */
+    .decked-select-wrapper:not(:has(*:focus)){
+        border-color: var(--container-no-focus-border-color);
+    }
+    .decked-select-wrapper:hover {
+        border-color:  var(--hover-highlight-color);
+    }
+    .decked-select-wrapper {
+        legend {
+            opacity: 0;
+            transform: translateY(var(--translate-length)); /* slightly lower */
+            transition: opacity var(--transition-interval) ease, transform var(--transition-interval) ease;
+            width: 0px;
+            padding-inline: 0px;
+        }
+        label>span {
+            opacity: 1;
+            visibility: visible;
+            display:inline-block;
+            max-width: var(--max-width-label);
+            transition: 
+                opacity var(--transition-interval) ease, 
+                transform var(--transition-interval) ease, 
+                visibility 0s linear var(--transition-interval),
+                max-width var(--transition-interval) ease
+            ;
+                
+        }
+    }
+    
+</style>
