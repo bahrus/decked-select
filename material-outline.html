@@ -13,19 +13,20 @@
     @media (prefers-color-scheme: dark) {
         .decked-select-wrapper {
             /* Color Variables */
-            --hover-highlight-color: #3399ff; /* lighter blue for dark mode */
+            --option-hover-background-color: rgb(101, 105, 108);/*, 0.16);*/
+            --hover-highlight-color: var(--option-hover-background-color); /*#3399ff;  lighter blue for dark mode */
             --select-border-color: #444444;
             --select-background-color: #1e1e1e;
             --select-background-hover: #333333;
             /* alternate row color */
-            --select-background-odd: #2a2a2a;
+            --select-background-odd: var(--select-background-color);
             /* --select-background-hover-focus: plum; */
             --select-background-hover-focus: rgba(100, 181, 246, 0.16);
             --select-icon-color: #bbbbbb;
             --option-color: #ffffff;
             --container-focus-border-color: rgb(144, 202, 249);
             --container-no-focus-border-color: rgba(255, 255, 255, 0.23);
-            --option-hover-background-color: rgb(101, 105, 108);/*, 0.16);*/
+            
         }
     }
 
