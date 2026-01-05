@@ -21,7 +21,7 @@
     "update": "ncu -u && npm install"
   },
   "dependencies": {
-    "be-decked-with": "0.0.2"
+    "be-decked-with": "0.0.3"
   },
   "devDependencies": {
     "@playwright/test": "1.57.0",

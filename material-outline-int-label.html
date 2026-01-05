@@ -1,7 +1,7 @@
 <fieldset part=decked-select-fieldset class=decked-select-wrapper part=decked-select-wrapper>
-    <legend part=decked-select-legend aria-label={{options.0.textContent}}>{{options.0.textContent}}</legend>
+    <legend part=decked-select-legend>{{options.0.textContent}}</legend>
     <slot>
-        <select></select>
+        <select aria-label={{options.0.textContent}}></select>
     </slot>
     
 </fieldset>
