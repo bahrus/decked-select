@@ -162,6 +162,11 @@
 
 
     }
+    .decked-select-wrapper:has(option[value=""]:checked){
+        span.something-selected {
+            display: none;
+        }
+    }
     .decked-select-wrapper:has(option:not([value=""]):checked){
         border-color: var(--container-focus-border-color);
         legend {
@@ -171,12 +176,15 @@
             padding-inline: var(--legend-padding);
         }
         option[value=""]{
-            ::before {
+            /* ::before {
                 content: "Not Specified";
-            }
+            } */
             /* label {
                 display: none;
             } */
+            span.nothing-selected {
+                display: none;
+            }
         }
 
     }
