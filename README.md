@@ -9,7 +9,7 @@ This package contains a few alternative decking layers, depending on what type o
 1.  material-outline-ext-label.html -- external label 
 2.  material-outline-int-label.html -- places thee label inside the top option.
 
-## Sample markup
+## Sample markup - external label
 
 ```html
 <script type=importmap >
@@ -40,6 +40,30 @@ This package contains a few alternative decking layers, depending on what type o
 </select>
 
 ```
+
+## Sample markup - internal label
+
+```html
+<select id=select1
+        😶‍🌫️-src="decked-select/material-outline-int-label.html"
+        💍
+    >
+    <button>
+        <selectedcontent></selectedcontent>
+    </button>
+    <option class=nothing-selected value=""><label for=select1>Country</label></option>
+    <option class=something-selected value="">None</option>
+    <option value="us">United States</option>
+    <option value="uk">United Kingdom</option>
+    <option value="ca">Canada</option>
+    <option value="au">Australia</option>
+    <option value="de">Germany</option>
+    <option value="fr">France</option>
+    <option value="jp">Japan</option>
+</select>
+```
+
+Having two empty options with classes nothing-selected and something-selected is optional.  This is only if you want what the option text to change when another option is selected.
 
 ## Recommended vscode extensions:
 
