@@ -45,9 +45,9 @@ This package contains a few alternative decking layers, depending on what type o
 
 ```html
 <select id=select1
-        😶‍🌫️-src="decked-select/material-outline-int-label.html"
-        💍
-    >
+    😶‍🌫️-src="decked-select/material-outline-int-label.html"
+    💍
+>
     <button>
         <selectedcontent></selectedcontent>
     </button>
