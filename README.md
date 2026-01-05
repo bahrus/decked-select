@@ -4,6 +4,11 @@
 
 It makes the select element [customizable](https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Customizable_select), and adds some styling to make the entire decked select have a material UI look and feel.
 
+This package contains a few alternative decking layers, depending on what type of UI is desired:
+
+1.  material-outline-ext-label.html -- external label 
+2.  material-outline-int-label.html -- places thee label inside the top option.
+
 ## Sample markup
 
 ```html
@@ -20,7 +25,7 @@ It makes the select element [customizable](https://developer.mozilla.org/en-US/d
 
 <select id=select
     data-label=Country
-    😶‍🌫️-src="decked-select/material.html">
+    😶‍🌫️-src="decked-select/material-outline-ext-label.html">
     <button>
         <selectedcontent></selectedcontent>
     </button>

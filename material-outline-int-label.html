@@ -170,6 +170,14 @@
             width: auto;
             padding-inline: var(--legend-padding);
         }
+        option[value=""]{
+            ::before {
+                content: "Not Specified";
+            }
+            /* label {
+                display: none;
+            } */
+        }
 
     }
     /* wrapper where select doesn't have focus */
