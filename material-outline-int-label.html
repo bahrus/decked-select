@@ -162,8 +162,13 @@
 
 
     }
-    .decked-select-wrapper:has(option[value=""]:checked){
+    .decked-select-wrapper:has(option:checked:first-of-type){
         .something-selected {
+            display: none;
+        }
+    }
+    .decked-select-wrapper:has(option:checked:not(first-of-type)){
+        .nothing-selected {
             display: none;
         }
     }
@@ -175,11 +180,12 @@
             width: auto;
             padding-inline: var(--legend-padding);
         }
-        .nothing-selected {
-            display: none;
-        }
 
     }
+
+    .decked-select-wrapper:has(option::checked){
+    }
+
     /* wrapper where select doesn't have focus */
     .decked-select-wrapper:not(:has(*:focus)){
         border-color: var(--container-no-focus-border-color);
