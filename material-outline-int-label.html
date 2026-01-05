@@ -163,7 +163,7 @@
 
     }
     .decked-select-wrapper:has(option[value=""]:checked){
-        span.something-selected {
+        .something-selected {
             display: none;
         }
     }
@@ -175,16 +175,8 @@
             width: auto;
             padding-inline: var(--legend-padding);
         }
-        option[value=""]{
-            /* ::before {
-                content: "Not Specified";
-            } */
-            /* label {
-                display: none;
-            } */
-            span.nothing-selected {
-                display: none;
-            }
+        .nothing-selected {
+            display: none;
         }
 
     }
