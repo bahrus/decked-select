@@ -7,7 +7,7 @@ It makes the select element [customizable](https://developer.mozilla.org/en-US/d
 This package contains a few alternative decking layers, depending on what type of UI is desired:
 
 1.  material-outline-ext-label.html -- external label 
-2.  material-outline-int-label.html -- places thee label inside the top option.
+2.  matolin.html -- places thee label inside the top option.
 
 ## Sample markup - external label
 
@@ -45,7 +45,7 @@ This package contains a few alternative decking layers, depending on what type o
 
 ```html
 <select id=select1
-    😶‍🌫️-src="decked-select/material-outline-int-label.html"
+    😶‍🌫️-src="decked-select/matolin.html"
     💍
 >
     <button>
